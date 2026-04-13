@@ -1,1 +1,1 @@
-from .logging import debug, info, warning, error
+from .logging import debug, info, warning, error, exception
