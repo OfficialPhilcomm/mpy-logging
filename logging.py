@@ -10,6 +10,7 @@ EXCEPTION = 4
 LABELS = { DEBUG: "DEBUG", INFO: "INFO", WARNING: "WARN", ERROR: "ERROR", EXCEPTION: "EXCEPTION" }
 
 LOG_FILE = "app.log"
+LOG_FILE_LEVEL = INFO
 
 def timestamp():
   now = time.localtime()
@@ -24,7 +25,7 @@ def log(level, *args):
 
   print(msg)
 
-  if level > DEBUG:
+  if level >= LOG_FILE_LEVEL:
     with open(LOG_FILE, "a") as f:
       f.write(msg + "\n")
 
